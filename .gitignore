@@ -17,4 +17,5 @@ artifacts/
 overlays/
 
 .DS_Store
+.springBeans
 bin/
