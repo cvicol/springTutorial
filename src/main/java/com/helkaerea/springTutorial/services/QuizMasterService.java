@@ -1,6 +1,8 @@
-package com.helkaerea.springTutorial.quiz;
+package com.helkaerea.springTutorial.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
+import com.helkaerea.springTutorial.quiz.QuizMaster;
 
 public class QuizMasterService {
     private QuizMaster quizMaster;

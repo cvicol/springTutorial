@@ -11,6 +11,8 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.helkaerea.springTutorial.services.QuizMasterService;
+
 public class QuizMasterServiceTest {
     private static QuizMasterService quizMaster;
     public static final String SPRING_QUESTION = "Are you new at Spring?";

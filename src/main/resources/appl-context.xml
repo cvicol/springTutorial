@@ -12,6 +12,6 @@
         <property name="message"
             value="This is teh default Message that NORMAL PEOPLE get!!"></property>
     </bean>    
-    <bean id="quizMasterService" class="com.helkaerea.springTutorial.quiz.QuizMasterService"></bean>
+    <bean id="quizMasterService" class="com.helkaerea.springTutorial.services.QuizMasterService"></bean>
 
 </beans>
