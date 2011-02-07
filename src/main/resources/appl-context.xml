@@ -13,5 +13,9 @@
             value="This is teh default Message that NORMAL PEOPLE get!!"></property>
     </bean>    
     <bean id="quizMasterService" class="com.helkaerea.springTutorial.services.QuizMasterService"></bean>
-
+    <bean id="user" class="com.helkaerea.springTutorial.user.User">
+    <property name="name" value="Eric"></property>
+    <property name="age" value="15"></property>
+    <property name="country" value="Romania"></property>
+    </bean>
 </beans>
