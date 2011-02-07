@@ -20,14 +20,23 @@ public class UserTest {
     public static final String NULL_STRING = null;
     public static final int WEIRD_AGE = -15;
     private static final String EMPTY_STRING = " ";
+    private static final Object USER_WITH_FULL_CONSTR = "Escher is 24 years old and living in : Netherlands";
+    private static final Object USER_WITH_PARTIAL_CONSTR = "Escher is 0 years old and living in : Netherlands";
+    private static final Object USER_WITH_FUNNEH_PARTIAL_CONSTR = "Escher is 24 years old and living in : null";
     
     private static User user;
+    private static User userWithFullConstructor;
+    private static User userWithPartialConstructor;
+    private static User userWithFunnyPartialConstructor;
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
    
     @BeforeClass
     public static void beforeClass() {
         ApplicationContext context = new ClassPathXmlApplicationContext("appl-context.xml");        
-        user = (User) context.getBean("user");    
+        user = (User) context.getBean("user");
+        userWithFullConstructor = (User) context.getBean("userWithFullConstructor");
+        userWithFunnyPartialConstructor = (User) context.getBean("userWithFunnehPartialConstructor");
+        userWithPartialConstructor = (User) context.getBean("userWithPartialConstructor");
     }
     @Before
     public void beforeEach() {
@@ -67,6 +76,19 @@ public class UserTest {
     public void userShouldHaveAnCountry() throws Exception {
         Assert.assertThat(user.getCountry(),Matchers.is(INITIAL_COUNTRY));
     }
+    @Test
+    public void shouldBeUserWithFullConstructor() throws Exception {
+        Assert.assertEquals(USER_WITH_FULL_CONSTR ,userWithFullConstructor.toString());
+    }
+    @Test
+    public void shouldBeUserWithPartialConstructor() throws Exception {
+        Assert.assertEquals(USER_WITH_PARTIAL_CONSTR ,userWithPartialConstructor.toString());
+    }
+    @Test
+    public void shouldBeUserWithFunnehPartialConstructor() throws Exception {
+        Assert.assertEquals(USER_WITH_FUNNEH_PARTIAL_CONSTR ,userWithFunnyPartialConstructor.toString());
+    }
+    
     @After
     public void afterEach() {
         System.setOut(null);

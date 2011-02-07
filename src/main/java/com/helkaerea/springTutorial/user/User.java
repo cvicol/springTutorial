@@ -7,6 +7,24 @@ public class User {
     private int age;
     private String country;
     
+    public User() {
+        //just a default constructor
+    }
+    public User(String name, int age, String country) {
+        this.setAge(age);
+        this.setName(name);
+        this.setCountry(country);        
+    }
+    
+    public User(String name, String coutry) {
+        this.setCountry(coutry);
+        this.setName(name);
+    }
+    
+    public User(String name, int age) {
+        this.setAge(age);
+        this.setName(name);
+    }
     public String getName() {
        return this.name;
     }  
