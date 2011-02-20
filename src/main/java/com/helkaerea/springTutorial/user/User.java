@@ -1,19 +1,24 @@
 package com.helkaerea.springTutorial.user;
 
-
 public class User {
 
     private String name;
     private int age;
     private String country;
     
+    private String password;
+    private String gender;    
+    private String aboutYou;
+    private String[] community;
+    private Boolean mailingList = Boolean.FALSE;
     public User() {
         //just a default constructor
     }
+        
     public User(String name, int age, String country) {
         this.setAge(age);
         this.setName(name);
-        this.setCountry(country);        
+        this.setCountry(country);    
     }
     
     public User(String name, String coutry) {
@@ -55,6 +60,44 @@ public class User {
     }
 
     public String toString() {
-        return name + " is " + age + " years old and living in : " + country;
+        return name + " is " + age + " years old and living in : " + country ; 
+    }
+    
+    public String showFullDescription() {
+        return  this.toString() + " with pass:" + password + " with gender:" + gender +  " with aboutMe" + aboutYou + " with comunity" + getComunityAsString() + " with mailing list" + mailingList;
+    }
+    
+    private String getComunityAsString() {         
+        return null;
+    }
+    public void setPassword(String password) {
+        this.password = password;
+    }
+    public String getPassword() {
+        return password;
+    }
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+    public String getGender() {
+        return gender;
+    }
+    public void setAboutYou(String aboutYou) {
+        this.aboutYou = aboutYou;
+    }
+    public String getAboutYou() {
+        return aboutYou;
+    }
+    public void setCommunity(String[] community) {
+        this.community = community;
+    }
+    public String[] getCommunity() {
+        return community;
+    }
+    public void setMailingList(Boolean mailingList) {
+        this.mailingList = mailingList;
+    }
+    public Boolean getMailingList() {
+        return mailingList;
     }        
 }

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
     xsi:schemaLocation="http://www.springframework.org/schema/beans 
                         http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
                         http://www.springframework.org/schema/context
@@ -11,17 +12,22 @@
         <property name="message"
             value="This is teh default Message that NORMAL PEOPLE get!!"></property>
     </bean>
+    
     <bean id="quizMasterService"
         class="com.helkaerea.springTutorial.services.QuizMasterService"></bean>
+
+   <bean id="userService" class="com.helkaerea.springTutorial.user.UserService">      
+   </bean>        
+   
     <bean id="user" class="com.helkaerea.springTutorial.user.User">
         <property name="name" value="Eric"></property>
         <property name="age" value="15"></property>
         <property name="country" value="Romania"></property>
     </bean>
     <bean id="userWithFullConstructor" class="com.helkaerea.springTutorial.user.User">
-        <constructor-arg value="Escher" />
-        <constructor-arg value="24" />
-        <constructor-arg value="Netherlands" />
+        <constructor-arg type="java.lang.String" value="Escher" />
+        <constructor-arg type="int" value="24" />
+        <constructor-arg type="java.lang.String" value="Netherlands" />
     </bean>
     <bean id="userWithPartialConstructor" class="com.helkaerea.springTutorial.user.User">
         <constructor-arg type="java.lang.String" value="Escher" />
